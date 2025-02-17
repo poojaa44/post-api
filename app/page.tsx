@@ -1,7 +1,5 @@
 'use client'
-import { Button } from "@/components/ui/button";
 import axios from "axios";
-import Image from "next/image";
 
 import { useEffect, useState } from "react";
 import Modal from "./my-component/Modal";

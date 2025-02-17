@@ -3,7 +3,6 @@ import axios from 'axios';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -31,6 +30,7 @@ const CreatePostModal = () => {
 
     try {
       const newPost: Post = {
+        id:11,
         title,
         body,
         userId: 11, // Default user ID

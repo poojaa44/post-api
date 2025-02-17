@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import axios from 'axios';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -46,6 +45,7 @@ const UpdatePostModal = (id:{id:number}) => {
 
     try {
       const newPost: Post = {
+        id:11,
         title,
         body,
         userId: 11, // Default user ID
