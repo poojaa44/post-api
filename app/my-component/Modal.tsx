@@ -65,7 +65,7 @@ const Modal = (id:{id:number}) => {
                     {
                         showComments && 
                         comments?.map((comment,i)=>{
-                            return <div className='' >
+                            return <div key={i + i} className='' >
                                     <div><div className='' ><span className='font-bold ' > {comment.email}</span></div></div>
                                     <div>{comment.body}</div>
                             </div>

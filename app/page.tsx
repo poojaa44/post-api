@@ -43,7 +43,7 @@ export default function Home() {
     }
       {
         posts.map((post,i)=>{
-          return <div key={post.id} className=" bg-teal-300 h-[300px] text-black flex flex-col justify-center items-center p-4 rounded-xl cursor-pointer  " >
+          return <div key={post.id + i} className=" bg-teal-300 h-[300px] text-black flex flex-col justify-center items-center p-4 rounded-xl cursor-pointer  " >
             <h2 className="uppercase mb-4 font-bold text-center" >{post.title}</h2>
             {/* <p className="text-center" >{post.body}</p> */}
             <div className="flex justify-center max-sm:flex-col max-sm:items-center w-full gap-3 " >
