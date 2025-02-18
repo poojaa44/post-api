@@ -43,7 +43,6 @@ const CreatePostModal = () => {
       setBody('');
       setIsLoading(false);
       setIsOpen(false); 
-      window.location.reload()
       toast({
         title: "Post created successfully",
         // description: "Friday, February 10, 2023 at 5:57 PM",
