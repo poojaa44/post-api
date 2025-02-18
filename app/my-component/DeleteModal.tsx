@@ -13,12 +13,16 @@ import {
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
   import { Button } from "@/components/ui/button"
+  import { useToast } from '@/hooks/use-toast';
 const DeleteModal = (id:{id:number}) => {
 
-
+const {toast} =useToast()
     const DeleteApi = async (id:{id:number})=>{
         const response = await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id.id}`)
         console.log(response.status)
+        toast({
+            title:"Post Deleted successfully"
+        })
     }
 
   return (

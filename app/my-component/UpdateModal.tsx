@@ -9,6 +9,8 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 
+import { useToast } from '@/hooks/use-toast';
+
 interface Post {
   id: number;
   title: string;
@@ -24,6 +26,7 @@ const UpdatePostModal = (id:{id:number}) => {
   const [body, setBody] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const {toast} = useToast()
 
   // console.log(post?.title)
   const fetchParticularPost  = async (id: { id: number })=>{
@@ -61,6 +64,9 @@ const UpdatePostModal = (id:{id:number}) => {
       setBody('');
       setIsLoading(false);
       setIsOpen(false); 
+      toast({
+        title:"Post edited successfully"
+      })
       console.log('Post updated successfully:', response.data); 
       setIsOpen(false)
     } catch (error) {

@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-
+import { useToast } from "@/hooks/use-toast"
 interface Post {
   id: number;
   title: string;
@@ -22,7 +22,7 @@ const CreatePostModal = () => {
   const [body, setBody] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
+  const { toast } = useToast()
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => { 
     event.preventDefault(); // Prevent default form submission behavior
     setIsLoading(true);
@@ -30,10 +30,10 @@ const CreatePostModal = () => {
 
     try {
       const newPost: Post = {
-        id:11,
+        // id:11,
         title,
         body,
-        userId: 11, // Default user ID
+        userId: 1, // Default user ID
       };
 
       const response = await axios.post('https://jsonplaceholder.typicode.com/posts', newPost);
@@ -43,6 +43,11 @@ const CreatePostModal = () => {
       setBody('');
       setIsLoading(false);
       setIsOpen(false); 
+      window.location.reload()
+      toast({
+        title: "Post created successfully",
+        // description: "Friday, February 10, 2023 at 5:57 PM",
+      })
       console.log('Post created successfully:', response.data); 
     } catch (error) {
       console.error('Error creating post:', error);
