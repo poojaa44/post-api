@@ -48,10 +48,10 @@ const UpdatePostModal = (id:{id:number}) => {
 
     try {
       const newPost: Post = {
-        id:11,
+        id:1,
         title,
         body,
-        userId: 11, // Default user ID
+        userId: 1, // Default user ID
       };
       console.log(newPost)
 

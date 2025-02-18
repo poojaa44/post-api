@@ -30,7 +30,7 @@ const CreatePostModal = () => {
 
     try {
       const newPost: Post = {
-        // id:11,
+        id:1,
         title,
         body,
         userId: 1, // Default user ID
